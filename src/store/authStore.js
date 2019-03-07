@@ -1,9 +1,10 @@
-import { action, computed, observable } from "mobx";
-
+import { decorate, observable } from 'mobx';
 
 export default class AuthStore {
   constructor(rootStore) {
     this.rootStore = rootStore;
   }
-  @observable user = {id:2}
+  user = { id: 2 };
 }
+
+decorate(AuthStore, { user: observable });

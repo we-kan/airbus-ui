@@ -1,10 +1,10 @@
 import DataStore from "./dataStore";
-import authStore from "./authStore";
+import AuthStore from "./authStore";
 
 export default class Store {
 
   constructor() {
-    this.authStore = new authStore(this);
+    this.authStore = new AuthStore(this);
     this.dataStore = new DataStore(this);
   }
 }
