@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 import { Row, Col, Card, CardTitle, Table } from 'reactstrap';
 import API from '../api';
 import NewsCards from '../components/NewsCards';
+import {observer, inject} from 'mobx-react';
 
+@inject('dataStore')
+@observer
 class Details extends Component {
   constructor(props) {
     super(props);
@@ -11,15 +14,8 @@ class Details extends Component {
     this.state = {};
   }
 
-  async componentWillUpdate() {
-    console.log(this.props.match.params);
-    const res = await API.get(`/aircraft/aircraft_info/${this.props.match.params.model}/`);
-    this.setState({ ...this.state, aircraftInfo: res.data });
-  }
-
   render() {
-    console.log(this.state);
-    const info = this.state.aircraftInfo;
+    const info = this.props.dataStore.aircraft_info;
     return (
       <div>
         {info && (
@@ -74,6 +70,8 @@ class Details extends Component {
 }
 
 Details.propTypes = {
+
+  dataStore: PropTypes.object,
   match: PropTypes.object
 };
 

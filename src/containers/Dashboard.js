@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Switch, Route } from 'react-router-dom';
 
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col, ListGroup, ListGroupItem } from 'reactstrap';
 import Details from '../components/Details';
 import { inject, observer } from 'mobx-react';
 
@@ -15,20 +15,22 @@ class Dash extends Component {
   }
 
   openAircraftInfo = aircraftId => {
+    this.props.dataStore.getAircraftInfo(aircraftId);
     this.props.history.push(`/dashboard/details/${aircraftId}`);
   };
   render() {
     const aircrafts = this.props.dataStore.aircrafts;
     return (
       <Row>
-        <Col md={3} style={{ backgroundColor: '#ddd', paddingTop: '30px', cursor: 'pointer' }}>
-          <p>Home</p>
+        <Col md={3} style={{  paddingTop: '30px', cursor: 'pointer', width: '100%'}}>
+        <ListGroup>
+          <ListGroupItem>Home</ListGroupItem>
           {aircrafts.map(air => (
-            <p key={air.id} onClick={() => this.openAircraftInfo(air.id)}>
+            <ListGroupItem key={air.id} onClick={() => this.openAircraftInfo(air.id)}>
               {air.name}
-            </p>
+            </ListGroupItem>
           ))}
-          <p>Search and Filter</p>
+          <ListGroupItem>Search and Filter</ListGroupItem></ListGroup>
         </Col>
         <Col md={9}>
           <Switch>
