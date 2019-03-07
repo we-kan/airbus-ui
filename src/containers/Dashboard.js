@@ -9,7 +9,6 @@ class Login extends Component {
         <Col md={{ size: 6, offset: 3 }}>
           <Card body>
             <legend>Dashboard</legend>
-
           </Card>
         </Col>
       </Row>

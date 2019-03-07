@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import { Row, Col, Card, CardTitle, Form, FormGroup, Label, Input, FormText, Button } from 'reactstrap';
 
@@ -19,7 +20,9 @@ class Login extends Component {
                 <Input type="password" name="password" id="loginPassword" placeholder="Enter password here" />
               </FormGroup>
 
-              <Button>Login</Button>
+              <Link to="/feed">
+                <Button>Login</Button>
+              </Link>
             </Form>
           </Card>
         </Col>
