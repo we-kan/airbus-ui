@@ -25,7 +25,7 @@ class App extends Component {
       <Provider {...store}>
         <div className="page-container">
           <BrowserRouter>
-            <Container fluid={true}>
+            <Container>
               <Header />
               <Switch>
                 <Route path="/" exact={true} component={Login} />

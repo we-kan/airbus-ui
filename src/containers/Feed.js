@@ -6,28 +6,28 @@ import NewsCards from '../components/NewsCards';
 class Feed extends Component {
   constructor(props) {
     super(props);
-    this.newsData = {
-      title: 'Dummy headline'
-    };
+
+    this.data = [
+      {
+        id: 0,
+        title: 'Dummy headline'
+      },
+      {
+        id: 1,
+        title: 'Dummy 2'
+      }
+    ];
   }
   render() {
     return (
       <div>
         <h1>Feed</h1>
         <Row>
-          <Col md={{ size: 5, offset: 1 }}>
-            <NewsCards newsData={this.newsData} />
-          </Col>
-          <Col md={{ size: 5, offset: 1 }}>
-            <NewsCards newsData={this.newsData} />
-          </Col>
-
-          <Col md={{ size: 5, offset: 1 }}>
-            <NewsCards newsData={this.newsData} />
-          </Col>
-          <Col md={{ size: 5, offset: 1 }}>
-            <NewsCards newsData={this.newsData} />
-          </Col>
+          {this.data.map(item => (
+            <Col key={item.id} md={{ size: 6 }}>
+              <NewsCards newsData={item} />
+            </Col>
+          ))}
         </Row>
       </div>
     );

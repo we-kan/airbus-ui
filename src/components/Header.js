@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import {
-  Navbar,
-  NavbarBrand,
-  NavbarToggler,
-  Collapse,
-  Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle
-} from 'reactstrap';
+import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem } from 'reactstrap';
+import styled from 'styled-components';
+
+const CustomLink = styled.span`
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+`;
 
 class Login extends Component {
   constructor(props) {
@@ -35,16 +31,24 @@ class Login extends Component {
         <Collapse isOpen={this.state.isOpen} navbar>
           <Nav className="ml-auto" navbar>
             <NavItem>
-              <NavLink to="/feed">Feed</NavLink>
+              <Link to="/feed">
+                <CustomLink>Feed</CustomLink>
+              </Link>
             </NavItem>
             <NavItem>
-              <NavLink to="/upload-new">Upload new</NavLink>
+              <Link to="/upload-new">
+                <CustomLink>Upload new</CustomLink>
+              </Link>
             </NavItem>
             <NavItem>
-              <NavLink to="/dashboard">Search and Filter</NavLink>
+              <Link to="/dashboard">
+                <CustomLink>Search and Filter</CustomLink>
+              </Link>
             </NavItem>
             <NavItem>
-              <NavLink to="/dashboard">Logout</NavLink>
+              <Link to="/dashboard">
+                <CustomLink>Logout</CustomLink>
+              </Link>
             </NavItem>
           </Nav>
         </Collapse>
