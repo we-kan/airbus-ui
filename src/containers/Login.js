@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import { Row, Col, Card, CardTitle, Form, FormGroup, Label, Input, FormText, Button } from 'reactstrap';
+import { Row, Col, Card, Container, Form, FormGroup, Label, Input, FormText, Button } from 'reactstrap';
 
 class Login extends Component {
   render() {
     return (
+      <Container>
       <Row>
         <Col md={{ size: 6, offset: 3 }}>
           <Card body>
@@ -26,7 +27,7 @@ class Login extends Component {
             </Form>
           </Card>
         </Col>
-      </Row>
+      </Row></Container>
     );
   }
 }

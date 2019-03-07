@@ -42,7 +42,7 @@ class Login extends Component {
             </NavItem>
             <NavItem>
               <Link to="/dashboard">
-                <CustomLink>Search and Filter</CustomLink>
+                <CustomLink>Dashboard</CustomLink>
               </Link>
             </NavItem>
             <NavItem>
