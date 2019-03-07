@@ -1,0 +1,2 @@
+# Disable ESLint for Angular app
+src/ngapp/**/*.js

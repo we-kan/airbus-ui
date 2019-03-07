@@ -1,0 +1,20 @@
+# Git
+.git
+.gitignore
+
+# Node
+dist
+node_modules
+bower_components
+
+# IDEs and Editor Workspaces
+.idea
+.vscode
+.sublime-*
+
+# System
+.tmp
+.directory
+.DS_*
+.Trashes
+.Spotlight-V100
